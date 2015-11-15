@@ -1,3 +1,0 @@
-﻿(function ($) {
-    $("body").smoothWheel();
-})(jQuery);
