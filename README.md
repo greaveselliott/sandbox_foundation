@@ -1,3 +1,1 @@
-# sandbox_foundation
-# sandbox_foundation
-# sandbox_foundation
+# My initial sandbox environment for a website based on Foundation
