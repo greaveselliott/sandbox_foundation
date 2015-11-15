@@ -1,0 +1,76 @@
+@import 
+
+// variables
+		"base.variables",
+
+// Fonts
+
+// Plugins
+// foundation
+		"plugin.foundation.settings",
+		"foundation/components/block-grid",
+		"foundation/components/forms",
+		"foundation/components/grid",
+		"foundation/components/type",
+// animate CSS
+		"plugin.animate",
+
+// utility styles - Dependency: Foundation
+		"utility.mixins",
+		"utility.media-queries",
+		"utility.classes",
+
+// generic styles - Dependency: Foundation, Utility Classes
+		"general.typographic",
+
+// Plugins
+// - slickJS
+		"plugin.slick",
+
+// - Stellar
+		"plugin.stellar"
+
+
+// specific - Dependency: Foundation, Utility Classes
+
+
+// Fabric - Dependency: Foundation, Utility Classes
+
+;
+// Or selectively include components
+//@import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+ //  "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+ // "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";

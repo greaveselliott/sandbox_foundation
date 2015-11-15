@@ -1,0 +1,125 @@
+﻿/*
+	Generic responsive utility classes
+
+	Author:		Elliott Matthew Greaves
+	license:	MIT
+*/
+
+@include responsive_property('css-reset-minor') {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin: 0px;
+
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding: 0px;
+}
+
+// padding
+@include responsive_property('padding') { padding: $column-gutter; }
+@include responsive_property('padding-top') { padding-top: $column-gutter; }
+@include responsive_property('padding-right') { padding-right: $column-gutter; }
+@include responsive_property('padding-bottom') { padding-bottom: $column-gutter; }
+@include responsive_property('padding-left') { padding-left: $column-gutter; }
+@include responsive_property('no-padding') { padding: 0; }
+@include responsive_property('no-padding-top') { padding-top: 0; }
+@include responsive_property('no-padding-right') { padding-right: 0; }
+@include responsive_property('no-padding-bottom') { padding-bottom: 0; }
+@include responsive_property('no-padding-left') { padding-left: 0; }
+
+// margin
+@include responsive_property('margin') { margin: $column-gutter; }
+@include responsive_property('margin-top') { margin-top: $column-gutter; }
+@include responsive_property('margin-right') { margin-right: $column-gutter; }
+@include responsive_property('margin-bottom') { margin-bottom: $column-gutter; }
+@include responsive_property('margin-left') { margin-left: $column-gutter; }
+@include responsive_property('no-margin') { margin: 0; }
+@include responsive_property('no-margin-top') { margin-top: 0; }
+@include responsive_property('no-margin-right') { margin-right: 0; }
+@include responsive_property('no-margin-bottom') { margin-bottom: 0; }
+@include responsive_property('no-margin-left') { margin-left: 0; }
+
+// text align
+@include responsive_property('text-align-center') { text-align: center; }
+@include responsive_property('text-align-right') { text-align: right; }
+@include responsive_property('text-align-left') { text-align: left; }
+
+// display
+@include responsive_property('display-block') { display: block; }
+@include responsive_property('display-inline') { display: inline; }
+@include responsive_property('display-inline-block') { display: inline-block; }
+@include responsive_property('display-none') { display: none !important;}
+
+
+// position
+@include responsive_property('position-absolute') { position: absolute; }
+@include responsive_property('position-relative') { position: relative; }
+@include responsive_property('position-static') { position: static; }
+
+// Colour Specific Classes
+@each $colour in $colours_array {
+	// Background colours
+	@include responsive_property(background-#{nth($colour,1)}){
+		background-color: #{nth($colour,2)};
+
+		// Generates opacity classes
+		@for $i from 1 through 4 {
+			$opacity: $i * 20;
+			&.background-opacity-#{$opacity} {
+				background-color: rgba(nth($colour,2),($i/100) * 20);
+			}
+		}  
+	}
+	// Text Colours
+	@include responsive_property(text-colour-#{nth($colour, 1)}){
+		color: #{nth($colour,2)};
+	}
+	// Borders
+	@include responsive_property(border-#{nth($colour, 1)}){border: solid 1px #{nth($colour,2)};}
+	@include responsive_property(border-top-#{nth($colour, 1)}) {border-top: solid 1px #{nth($colour,2)};}
+	@include responsive_property(border-right-#{nth($colour, 1)}) {border-right: solid 1px #{nth($colour,2)};}
+	@include responsive_property(border-bottom-#{nth($colour, 1)}) {border-bottom: solid 1px #{nth($colour,2)};}
+	@include responsive_property(border-left-#{nth($colour, 1)}) {border-left: solid 1px #{nth($colour,2)};}
+}
+
+.before_after {
+	display: block;
+	content: " ";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+// white gradient overlay
+.gradient-white {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;0+0,0.2+99 */
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 99%, rgba(255,255,255,0.2) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(99%,rgba(255,255,255,0.2)), color-stop(100%,rgba(255,255,255,0.2))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.2) 99%,rgba(255,255,255,0.2) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.2) 99%,rgba(255,255,255,0.2) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.2) 99%,rgba(255,255,255,0.2) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.2) 99%,rgba(255,255,255,0.2) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#33ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.gradient-white-overlay {
+	&:after {
+		@extend .before_after;
+		@extend .gradient-white;
+	}
+}
+
+// floats
+@include responsive_property('float-left') { float: left; }
+@include responsive_property('float-right') { float: right; }
+@include responsive_property('float-none') { float: none; }
+
+// dimensions
+
+@include responsive_property('width-100') { width: 100%; }

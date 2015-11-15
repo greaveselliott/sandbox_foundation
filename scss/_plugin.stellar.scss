@@ -1,0 +1,23 @@
+﻿.stellar-wrapper {
+	position: relative;
+	overflow: hidden;
+	.stellar-image-crop {
+		position: absolute;
+		top: -50%;
+	}
+	.stellar-inner-wrapper {
+		position: relative;
+		width: 120%;
+		margin-left: -10%;
+		top: 50%;
+	}
+	.stellar-featured-image {
+		min-height: 300px;
+		width: 100%;
+		background-size: cover;
+	}
+	.stellar-featured-thumbnail {
+		min-height: 200px;
+		width: 100%;
+	}
+}

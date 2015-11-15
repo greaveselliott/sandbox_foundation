@@ -1,0 +1,35 @@
+﻿// COLOURS
+$grey-1: rgb(222,222,222);
+$grey-2: rgb(102,102,102);
+$grey-3: rgb(68,68,68);
+$grey-4: rgb(50,50,50);
+
+$colours_array: 
+	'grey-1' $grey-1,
+	'grey-2' $grey-2,
+	'grey-3' $grey-3,
+	'grey-4' $grey-4;
+
+
+// OPACITY STEPS - unfinished
+// this variable defines the number of % steps 
+// the opacity value takes to get from 0 to 100
+// for example, the default is 5
+// so the @mixin that loops through the opacity steps
+// will output 0%, 20%, 40%, 60%, 80%, 100%;
+// ---------------------------------------------------
+// Note: The higher the number, 
+// the more  CSS classes that will be generated, 
+// so the larger your code base will become
+//$opacity_steps: 5;
+
+//@mixin opacity_steps ($property) {
+//	$max: 100;
+//	$steps: $max / $opacity_detail;
+
+//	@for $i from 1 through $steps {
+//		.#{$property}-opacity-#{$max} {
+//			@content;
+//		}
+//	}  
+//}
